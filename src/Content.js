@@ -29,13 +29,37 @@ class Content extends React.Component {
         }
     }
 
+    createGrid = (e) => {
+        e.preventDefault();
+        let {height, width, color} = this.state;
+        let table = document.getElementById('here');
+        
+        for (let i = 1; i < height; i++) {
+            let tr = document.createElement('tr');
+            tr.classList.add('row')
+            let td = document.createElement('td');
+            table.appendChild(tr);
+            for (let j = 1; j < width; j++) {
+                // document.getElementsByClassName('row').appendChild(td);
+                let rows = document.getElementsByClassName('row');
+                [].forEach.call(rows, (row) => {
+                    row.appendChild(td);
+                })
+            }
+        }
+    }
+
     render() {
         let {height, width, color} = this.state;
         console.log(color);
         return (
             <div className="content">
-                <SideBar onChange={this.inputValues}/>
-                <DesignCanvas />
+                <SideBar
+                onChange={this.inputValues}
+                onClick={this.createGrid} />
+                <DesignCanvas 
+                height={height}
+                width={width} />
             </div>
         )
     }

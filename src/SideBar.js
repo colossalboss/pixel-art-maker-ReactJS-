@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SideBar = ({onChange}) => {
+const SideBar = ({onChange, onClick}) => {
     return (
         <div className="side">
             <div className="header">
@@ -20,7 +20,7 @@ const SideBar = ({onChange}) => {
                         </div>
                     </div>
                     <div className="center-text">
-                        <input type="submit" id="submit" />
+                        <input type="submit" id="submit" onClick={onClick} />
                     </div>
                 </form>
                 <div className="center-text">
