@@ -1,6 +1,6 @@
 .App {
   /* text-align: center; */
-  display: flex;
+  /* display: flex; */
 }
 
 .design {
@@ -52,4 +52,8 @@
   display: flex;
   justify-content: space-between;
   padding: 1em;
+}
+
+.content {
+  display: flex;
 }
