@@ -9,7 +9,7 @@ class Content extends React.Component {
         this.state = {
             height:'',
             width: '',
-            color: ''
+            color: 'black'
         }
     }
 
@@ -33,20 +33,27 @@ class Content extends React.Component {
         e.preventDefault();
         let {height, width, color} = this.state;
         let table = document.getElementById('here');
+        table.innerHTML = '';
         
-        for (let i = 1; i < height; i++) {
+        // let td = document.createElement('td');
+        for (let i = 0 ; i < height; i++) {
             let tr = document.createElement('tr');
             tr.classList.add('row')
-            let td = document.createElement('td');
             table.appendChild(tr);
-            for (let j = 1; j < width; j++) {
-                // document.getElementsByClassName('row').appendChild(td);
-                let rows = document.getElementsByClassName('row');
-                [].forEach.call(rows, (row) => {
-                    row.appendChild(td);
-                })
+            let rows = document.querySelector('tr:last-child');
+            for (let j = 0; j < width; j++) {
+                console.log(rows);
+                let td = document.createElement('td');
+                td.classList.add('cell')
+                
+                
+                rows.appendChild(td);
             }
         }
+    }
+
+    componentDidUpdate = () => {
+       
     }
 
     render() {

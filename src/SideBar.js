@@ -12,11 +12,11 @@ const SideBar = ({onChange, onClick}) => {
                     <div className="size-selector">
                         <div className="input-field">
                             Height:
-                            <input onChange={onChange} id="height" name="height" type="number" value=""/>
+                            <input onChange={onChange} id="height" name="height" type="number"/>
                         </div>
                         <div className="input-field">
                             Width:
-                            <input onChange={onChange} id="width" name="width" type="number" value=""/>
+                            <input onChange={onChange} id="width" name="width" type="number"/>
                         </div>
                     </div>
                     <div className="center-text">

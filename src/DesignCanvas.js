@@ -8,6 +8,7 @@ const DesignCanvas = ({height, width}) => {
             </div>
             <div>
                 <table>
+                    <thead></thead>
                     <tbody id="here">
 
                     </tbody>
