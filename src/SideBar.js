@@ -8,7 +8,7 @@ const SideBar = ({onBlur, onClick}) => {
                 <h2>Choose Grid Size</h2>
             </div>
             <div>
-                <form>
+                <form id="size-picker">
                     <div className="size-selector">
                         <div className="input-field">
                             Height:
@@ -20,7 +20,7 @@ const SideBar = ({onBlur, onClick}) => {
                         </div>
                     </div>
                     <div className="center-text">
-                        <input type="submit" id="submit" onClick={onClick} />
+                        <input type="submit" id="submit" />
                     </div>
                 </form>
                 <div className="center-text">

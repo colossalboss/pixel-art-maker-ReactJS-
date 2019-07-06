@@ -40,21 +40,25 @@ class Content extends React.Component {
         e.preventDefault();
         let {height, width, color} = this.state;
         let table = document.getElementById('here');
+        let form = document.getElementById('size-picker');
         table.innerHTML = '';
         
-        for (let i = 0 ; i < height; i++) {
-            let tr = document.createElement('tr');
-            tr.classList.add('row')
-            table.appendChild(tr);
-            let rows = document.querySelector('tr:last-child');
-            for (let j = 0; j < width; j++) {
-                let td = document.createElement('td');
-                td.classList.add('cell')
-                
-                
-                rows.appendChild(td);
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            for (let i = 0 ; i < height; i++) {
+                let tr = document.createElement('tr');
+                tr.classList.add('row')
+                table.appendChild(tr);
+                let rows = document.querySelector('tr:last-child');
+                for (let j = 0; j < width; j++) {
+                    let td = document.createElement('td');
+                    td.classList.add('cell')
+                    
+                    
+                    rows.appendChild(td);
+                }
             }
-        }
+        });
         this.draw()
     }
 
@@ -78,7 +82,7 @@ class Content extends React.Component {
         this.draw();
     }
 
-    componentWillMount = () => {
+    componentDidMount = () => {
         this.draw();
     }
 
