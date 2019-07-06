@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SideBar = ({onChange, onClick}) => {
+const SideBar = ({onBlur, onClick}) => {
     return (
         <div className="side">
             <div className="header">
@@ -12,11 +12,11 @@ const SideBar = ({onChange, onClick}) => {
                     <div className="size-selector">
                         <div className="input-field">
                             Height:
-                            <input onChange={onChange} id="height" name="height" type="number"/>
+                            <input onBlur={onBlur} id="height" name="height" type="number"/>
                         </div>
                         <div className="input-field">
                             Width:
-                            <input onChange={onChange} id="width" name="width" type="number"/>
+                            <input onBlur={onBlur} id="width" name="width" type="number"/>
                         </div>
                     </div>
                     <div className="center-text">
@@ -25,7 +25,7 @@ const SideBar = ({onChange, onClick}) => {
                 </form>
                 <div className="center-text">
                     <h2>Pick A Color</h2>
-                <input type="color" name="color" onChange={onChange} />
+                <input type="color" id="color" name="color" onBlur={onBlur} />
                     </div>
                 <div className="bottom">
                     <div className="gallery">
