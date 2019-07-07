@@ -40,33 +40,15 @@ class Content extends React.Component {
         e.preventDefault();
         let {height, width, color} = this.state;
         let table = document.getElementById('here');
-        let form = document.getElementById('size-picker');
+        // let form = document.getElementById('size-picker');
         table.innerHTML = '';
         
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            for (let i = 0 ; i < height; i++) {
-                let tr = document.createElement('tr');
-                tr.classList.add('row')
-                table.appendChild(tr);
-                let rows = document.querySelector('tr:last-child');
-                for (let j = 0; j < width; j++) {
-                    let td = document.createElement('td');
-                    td.classList.add('cell')
-                    
-                    
-                    rows.appendChild(td);
-                }
-            }
-        });
-        this.draw()
+        // this.draw()
     }
 
-    draw = () => {
+    draw = (e) => {
         let {color} = this.state;
-        let targetArea = document.getElementById('here');
 
-        targetArea.addEventListener('click', function(e) {
             let elem = e.target;
             if (elem.classList.contains('cell')) {
                 if (!elem.hasAttribute('style')) {
@@ -75,15 +57,38 @@ class Content extends React.Component {
                     elem.removeAttribute('style');
                 }
             }
-        });
+    }
+
+    drawGrid = (e) => {
+        let {height, width} = this.state;
+        let table = document.getElementById('here');
+        table.innerHTML = '';
+
+        e.preventDefault();
+        for (let i = 0 ; i < height; i++) {
+            let tr = document.createElement('tr');
+            tr.classList.add('row')
+            table.appendChild(tr);
+            let rows = document.querySelector('tr:last-child');
+            for (let j = 0; j < width; j++) {
+                let td = document.createElement('td');
+                td.classList.add('cell')
+                
+                
+                rows.appendChild(td);
+            }
+        }
     }
 
     componentDidUpdate = () => {
-        this.draw();
+        let targetArea = document.getElementById('here');
+        targetArea.addEventListener('click', this.draw);
     }
 
     componentDidMount = () => {
-        this.draw();
+        let form = document.getElementById('size-picker');
+
+        form.addEventListener('submit', this.drawGrid);
     }
 
     render() {
