@@ -7,7 +7,7 @@ const DesignCanvas = ({height, width}) => {
                 <h2 className="center-text">Design Canvas</h2>
             </div>
             <div>
-                <table>
+                <table id="pixelCanvas">
                     <thead></thead>
                     <tbody id="here">
 
@@ -16,10 +16,10 @@ const DesignCanvas = ({height, width}) => {
             </div>
             <div className="btn-area">
                 <div>
-                    <button>Save</button>
+                    <button id="save">Save</button>
                 </div>
                 <div>
-                    <button>Delete</button>
+                    <button id="delete">Delete</button>
                 </div>
             </div>
         </div>

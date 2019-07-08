@@ -32,12 +32,8 @@ const SideBar = ({onBlur, onClick}) => {
                         <h2>Saved Files</h2>
                     </div>
                     <div className="list">
-                        <ul>
-                            <li>Item</li>
-                            <li>Item</li>
-                            <li>Item</li>
-                            <li>Item</li>
-                            <li>Item</li>
+                        <ul id="fileList">
+                            
                         </ul>
                     </div>
                 </div>
