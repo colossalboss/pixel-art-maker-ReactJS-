@@ -262,7 +262,7 @@ class Content extends React.Component {
         let form = document.getElementById('size-picker');
 
         form.addEventListener('submit', this.drawGrid);
-        this.list();
+        // this.list(name);
     }
 
     render() {
